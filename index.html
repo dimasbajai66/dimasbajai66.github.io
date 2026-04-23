@@ -1,98 +1,177 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivamed Pharmaceuticals Ltd | Solusi Distribusi Kesehatan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #0056b3;
-            --secondary-color: #00a8cc;
-            --accent-color: #28a745;
-            --light-bg: #f8fbff;
-            --dark-text: #2c3e50;
-            --glass: rgba(255, 255, 255, 0.8);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivamed Pharmaceuticals Ltd</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-        body { background-color: var(--light-bg); color: var(--dark-text); line-height: 1.6; }
+    body {
+        background: #f4f8fb;
+        color: #333;
+    }
 
-        /* Navigation */
-        nav { padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; background: var(--glass); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    header {
+        background: linear-gradient(135deg, #0a3d62, #3c6382);
+        color: white;
+        padding: 20px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary-color); }
+    header h1 {
+        font-size: 24px;
+    }
 
-        /* Hero Section */
-        .hero { height: 80vh; display: flex; align-items: center; padding: 0 10%; background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.6)), url('https://images.unsplash.com/photo-1530497610245-94d3c76cda28?q=80&w=2070') no-repeat center center/cover; }
+    nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        font-weight: 500;
+    }
 
-        .hero-content { max-width: 600px; }
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; color: var(--primary-color); }
-        .btn { padding: 15px 35px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 50px; display: inline-block; }
+    .hero {
+        height: 90vh;
+        background: url('https://images.unsplash.com/photo-1588776814546-ec7e2d7d5b8c') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
 
-        /* Services */
-        .services { padding: 100px 10%; }
-        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .bento-item { background: white; padding: 40px; border-radius: 24px; border: 1px solid rgba(0,0,0,0.05); }
-        .featured { grid-column: span 2; background: var(--primary-color); color: white; }
+    .hero h2 {
+        font-size: 48px;
+        background: rgba(0,0,0,0.5);
+        padding: 20px;
+        border-radius: 10px;
+    }
 
-        /* About Section */
-        .about { padding: 100px 10%; display: flex; gap: 50px; align-items: center; background: white; }
-        .about-img { flex: 1; border-radius: 30px; overflow: hidden; }
-        .about-img img { width: 100%; display: block; height: 400px; object-fit: cover; }
+    .section {
+        padding: 60px 10%;
+        text-align: center;
+    }
 
-        footer { background: #f1f4f8; padding: 60px 10%; text-align: center; }
-        .contact-email { font-weight: 600; color: var(--primary-color); }
+    .section h2 {
+        margin-bottom: 20px;
+        color: #0a3d62;
+    }
 
-        @media (max-width: 768px) { .bento-grid { grid-template-columns: 1fr; } .about { flex-direction: column; } }
-    </style>
+    .cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .about {
+        background: #ffffff;
+    }
+
+    .contact {
+        background: #0a3d62;
+        color: white;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #082c44;
+        color: white;
+    }
+
+</style>
 </head>
+
 <body>
 
+<header>
+    <h1>Shivamed Pharma</h1>
     <nav>
-        <div class="logo">SHIVAMED.</div>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
     </nav>
+</header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Menghubungkan Kesehatan dengan Kepercayaan.</h1>
-            <p>Shivamed Pharmaceuticals Ltd adalah mitra global dalam distribusi grosir farmasi berkualitas tinggi.</p>
-            <a href="#layanan" class="btn">Pelajari Layanan</a>
-        </div>
-    </section>
+<section class="hero">
+    <h2>Trusted Pharmaceutical Distribution in the UK</h2>
+</section>
 
-    <section class="services" id="layanan">
-        <div class="bento-grid">
-            <div class="bento-item featured">
-                <h3>Grosir Farmasi Global</h3>
-                <p>Distribusi produk farmasi esensial dengan standar kepatuhan ketat.</p>
-            </div>
-            <div class="bento-item">
-                <h3>Konsultasi</h3>
-                <p>Efisiensi rantai pasok industri kesehatan.</p>
-            </div>
-            <div class="bento-item">
-                <h3>Kualitas</h3>
-                <p>Kontrol kualitas menyeluruh sebelum distribusi.</p>
-            </div>
-        </div>
-    </section>
+<section class="section">
+    <h2>Our Services</h2>
+    <p>Delivering reliable pharmaceutical solutions with quality and compliance.</p>
 
-    <section class="about">
-        <div class="about-text">
-            <h2>Tentang Shivamed</h2>
-            <p>Berpusat di Harrow, kami adalah jembatan yang menghubungkan inovasi medis dengan kebutuhan pasien di seluruh penjuru.</p>
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1580281657521-5f0c5d5f5b5e">
+            <h3>Pharma Distribution</h3>
+            <p>Efficient supply of medicines to healthcare providers.</p>
         </div>
-        <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=2070" alt="Laboratory Research">
-        </div>
-    </section>
 
-    <footer>
-        <p>Laxmi House, 2B Draycott Avenue, HARROW, HA3 0BU, United Kingdom</p>
-        <p>Email: <span class="contact-email">testdevtool@gmail.com</span></p>
-    </footer>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1582719478185-2194c7e54f1f">
+            <h3>Consulting</h3>
+            <p>Expert guidance in pharmaceutical business operations.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c">
+            <h3>Global Supply</h3>
+            <p>Connecting international pharmaceutical markets.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section about">
+    <h2>About Us</h2>
+    <p>
+        Shivamed Pharmaceuticals Ltd is a UK-based pharmaceutical company specializing in 
+        wholesale distribution of pharmaceutical goods and business consultancy services. 
+        We are committed to delivering high-quality healthcare solutions globally.
+    </p>
+</section>
+
+<section class="section contact">
+    <h2>Contact Us</h2>
+    <p>
+        Laxmi House, 2B Draycott Avenue<br>
+        Harrow, HA3 0BU, United Kingdom<br><br>
+        Email: info@shivamedpharma.com
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Shivamed Pharmaceuticals Ltd</p>
+</footer>
 
 </body>
 </html>
