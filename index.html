@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivamed Pharmaceuticals Ltd | Distribusi Farmasi Terpercaya</title>
+    <style>
+        /* CSS Variables & Reset */
+        :root {
+            --primary: #2563eb; /* Blue Clinical */
+            --secondary: #10b981; /* Health Green */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --glass: rgba(255, 255, 255, 0.7);
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo span { color: var(--secondary); }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-content { flex: 1; }
+        
+        .hero-tag {
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Bento Grid Services */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto;
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .bento-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .bento-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .item-lg { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); }
+        .item-md { grid-column: span 2; }
+
+        .bento-item h3 { margin-bottom: 1rem; font-size: 1.5rem; color: var(--primary); }
+        .bento-item p { font-size: 0.95rem; color: var(--text-muted); }
+
+        /* Address Block */
+        .info-card {
+            background: var(--text-dark);
+            color: white;
+            padding: 4rem;
+            border-radius: 30px;
+            margin-bottom: 6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .address-info h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--secondary); }
+        .address-box {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding: 4rem 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .item-lg, .item-md { grid-column: span 1; }
+            .info-card { flex-direction: column; text-align: center; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">SHIVAMED<span>PHARMA</span></div>
+            <div style="font-size: 0.875rem; font-weight: 600;">HARROW, UK</div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-tag">Inovasi Distribusi Farmasi</span>
+                <h1>Menghubungkan Kesehatan dengan Presisi.</h1>
+                <p>Shivamed Pharmaceuticals Ltd menyediakan solusi grosir obat-obatan berkualitas tinggi untuk memastikan akses kesehatan yang lebih baik bagi masyarakat.</p>
+                <a href="#about" class="btn">Pelajari Layanan</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&w=800&q=80" alt="Laboratory Pharmaceutical">
+            </div>
+        </section>
+
+        <section id="about" class="bento-grid">
+            <div class="bento-item item-lg">
+                <h3>Keunggulan Distribusi</h3>
+                <p>Sebagai pedagang grosir farmasi berlisensi, kami mengelola rantai pasok dengan standar keamanan yang ketat. Fokus kami adalah memastikan setiap produk medis sampai ke tangan klien dalam kondisi optimal dan tepat waktu.</p>
+                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=400&q=80" style="width:100%; margin-top:2rem; border-radius:15px;" alt="Science">
+            </div>
+            <div class="bento-item item-md">
+                <h3>Manajemen Konsultasi</h3>
+                <p>Kami tidak hanya mendistribusikan produk, tetapi juga memberikan saran strategis bagi mitra di industri kesehatan untuk meningkatkan efisiensi operasional.</p>
+            </div>
+            <div class="bento-item">
+                <h3>Kualitas Terjamin</h3>
+                <p>Hanya bekerja sama dengan produsen bersertifikat internasional.</p>
+            </div>
+            <div class="bento-item">
+                <h3>Layanan Global</h3>
+                <p>Berpusat di Harrow dengan jangkauan distribusi yang luas.</p>
+            </div>
+        </section>
+
+        <section class="info-card">
+            <div class="address-info">
+                <h2>Mari Berkolaborasi</h2>
+                <p>Hubungi tim kami untuk kebutuhan stok farmasi dan konsultasi bisnis medis.</p>
+            </div>
+            <div class="address-box">
+                <p><strong>SHIVAMED PHARMACEUTICALS LTD</strong></p>
+                <p>Laxmi House, 2B Draycott Avenue</p>
+                <p>HARROW, HA3 0BU</p>
+                <p>United Kingdom</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Shivamed Pharmaceuticals Ltd. Seluruh Hak Cipta Dilindungi.</p>
+            <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem;">
+                Kontak Profesional: <a href="mailto:testdevtool@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">testdevtool@gmail.com</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
