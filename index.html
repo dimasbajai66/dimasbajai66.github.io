@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivamed Pharmaceuticals Ltd | Solusi Rantai Pasok Kesehatan</title>
+    <title>Shivamed Pharmaceuticals Ltd | Solusi Farmasi Global</title>
     <style>
-        /* CSS Variables & Reset */
+        /* CSS Variables - Tema Medis Profesional */
         :root {
-            --primary: #0d9488; /* Teal 600 */
+            --primary: #0d9488; /* Teal Medis */
             --primary-dark: #0f172a; /* Slate 900 */
-            --accent: #2dd4bf; /* Teal 400 */
-            --bg: #ffffff;
-            --surface: #f8fafc;
+            --accent: #2dd4bf; /* Teal Terang */
+            --bg-body: #ffffff;
+            --bg-alt: #f8fafc;
             --text-main: #1e293b;
             --text-muted: #64748b;
             --border: #e2e8f0;
+            --glass: rgba(255, 255, 255, 0.7);
         }
 
         * {
@@ -25,35 +26,29 @@
         }
 
         body {
-            background-color: var(--bg);
+            background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
-            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Header */
-        header {
-            padding: 1.5rem 0;
+        /* Navigasi */
+        nav {
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 100;
+            z-index: 1000;
         }
 
         .logo {
+            font-size: 1.5rem;
             font-weight: 800;
-            font-size: 1.4rem;
             color: var(--primary-dark);
             letter-spacing: -1px;
         }
@@ -62,28 +57,29 @@
 
         /* Hero Section */
         .hero {
-            padding: 5rem 0;
+            padding: 6rem 5%;
             display: flex;
             align-items: center;
             gap: 4rem;
+            min-height: 80vh;
         }
 
         .hero-content { flex: 1; }
         
         .badge {
+            display: inline-block;
             background: #f0fdfa;
             color: var(--primary);
-            padding: 0.6rem 1.2rem;
+            padding: 0.5rem 1rem;
             border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            display: inline-block;
             border: 1px solid #ccfbf1;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 4rem;
             line-height: 1.1;
             margin-bottom: 1.5rem;
             color: var(--primary-dark);
@@ -91,29 +87,38 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-muted);
             margin-bottom: 2.5rem;
             max-width: 550px;
         }
 
-        .hero-img {
+        .hero-image {
             flex: 1;
-            border-radius: 24px;
+            border-radius: 2rem;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
-            height: 500px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
-        .hero-img img {
+        .hero-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         /* Bento Grid Services */
-        .services { padding: 6rem 0; }
-        
+        .services {
+            padding: 5rem 5%;
+            background-color: var(--bg-alt);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -121,147 +126,145 @@
             gap: 1.5rem;
         }
 
-        .bento-card {
-            background: var(--surface);
+        .bento-item {
+            background: white;
             padding: 2.5rem;
-            border-radius: 24px;
+            border-radius: 1.5rem;
             border: 1px solid var(--border);
             transition: all 0.3s ease;
         }
 
-        .bento-card:hover {
+        .bento-item:hover {
             transform: translateY(-5px);
             border-color: var(--primary);
             box-shadow: 0 10px 30px rgba(13, 148, 136, 0.05);
         }
 
-        .card-lg { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%); }
-        .card-md { grid-column: span 2; }
+        .item-large { 
+            grid-column: span 2; 
+            grid-row: span 2; 
+            background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%); 
+        }
 
-        .bento-card h3 { margin-bottom: 1rem; font-size: 1.6rem; color: var(--primary-dark); }
-        .bento-card p { color: var(--text-muted); font-size: 1rem; }
+        .item-medium { grid-column: span 2; }
 
-        /* CTA / Address Block */
-        .cta-section {
+        .bento-item h3 { margin-bottom: 1rem; color: var(--primary-dark); }
+        .bento-item p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Contact/Location */
+        .contact-box {
+            margin: 5rem 5%;
             background: var(--primary-dark);
             color: white;
-            padding: 5rem 0;
-            border-radius: 32px;
-            margin: 4rem 0;
+            padding: 4rem;
+            border-radius: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-left: 4rem;
-            padding-right: 4rem;
         }
 
-        .cta-content h2 { font-size: 2.5rem; margin-bottom: 1rem; letter-spacing: -1px; }
+        .contact-text h2 { font-size: 2.5rem; margin-bottom: 1rem; }
         
-        .address-box {
-            text-align: right;
-            border-left: 2px solid var(--primary);
-            padding-left: 3rem;
+        .address-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary);
         }
 
+        /* Tombol */
         .btn {
             background: var(--primary);
             color: white;
-            padding: 1rem 2.2rem;
-            border-radius: 12px;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             display: inline-block;
             transition: 0.3s;
         }
 
-        .btn:hover { background: var(--accent); color: var(--primary-dark); }
+        .btn:hover { opacity: 0.9; transform: scale(1.02); }
 
         /* Footer */
         footer {
-            padding: 4rem 0;
+            padding: 3rem 5%;
             text-align: center;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
             font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* Responsif */
         @media (max-width: 968px) {
             .hero { flex-direction: column; text-align: center; }
-            .hero h1 { font-size: 2.8rem; }
             .hero p { margin: 0 auto 2.5rem; }
             .bento-grid { grid-template-columns: 1fr; }
-            .card-lg, .card-md { grid-column: span 1; grid-row: auto; }
-            .cta-section { flex-direction: column; text-align: center; gap: 3rem; padding: 3rem; }
-            .address-box { text-align: center; border-left: none; padding-left: 0; }
+            .item-large, .item-medium { grid-column: span 1; grid-row: auto; }
+            .contact-box { flex-direction: column; text-align: center; gap: 3rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="display:flex; justify-content:space-between; width:100%; align-items:center;">
-            <div class="logo">SHIVA<span>MED</span></div>
-            <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-muted);">HARROW • LONDON</div>
+    <nav>
+        <div class="logo">SHIVA<span>MED</span></div>
+        <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-muted);">HARROW, LONDON</div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">Pharmaceutical Wholesale & Consultancy</span>
+            <h1>Menghubungkan Inovasi Kesehatan Global.</h1>
+            <p>Shivamed Pharmaceuticals Ltd adalah mitra terpercaya dalam distribusi grosir farmasi dan konsultasi manajemen strategis untuk sektor kesehatan di Britania Raya.</p>
+            <a href="#about" class="btn">Pelajari Selengkapnya</a>
         </div>
-    </header>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&w=800&q=80" alt="Laboratory Pharmaceutical">
+        </div>
+    </section>
 
-    <div class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <span class="badge">Pharmaceutical Wholesale & Consultancy</span>
-                <h1>Akses Kesehatan Global Berkualitas.</h1>
-                <p>Shivamed Pharmaceuticals Ltd berdedikasi untuk mendistribusikan produk medis kelas dunia dan memberikan solusi manajemen strategis bagi ekosistem kesehatan.</p>
-                <a href="#services" class="btn">Layanan Kami</a>
+    <section id="about" class="services">
+        <div class="section-title">
+            <h2>Layanan Unggulan Kami</h2>
+        </div>
+        <div class="bento-grid">
+            <div class="bento-item item-large">
+                <h3>Distribusi Grosir Farmasi</h3>
+                <p>Kami memfasilitasi rantai pasokan obat-obatan dan produk kesehatan berkualitas tinggi ke apotek, rumah sakit, dan lembaga medis di seluruh negeri. Standar keamanan dan kepatuhan regulasi adalah prioritas utama kami untuk menjamin integritas setiap produk yang kami salurkan.</p>
+                <img src="https://images.unsplash.com/photo-1586015555751-63bb00f4322a?auto=format&fit=crop&w=500&q=80" style="width:100%; margin-top:2rem; border-radius:1rem; height: 200px; object-fit: cover;" alt="Pharmacy">
             </div>
-            <div class="hero-image-wrapper hero-img">
-                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&w=800&q=80" alt="Pharmaceutical Laboratory">
+            <div class="bento-item item-medium">
+                <h3>Konsultasi Manajemen</h3>
+                <p>Memberikan wawasan strategis untuk membantu organisasi kesehatan mengoptimalkan operasional, manajemen stok, dan efisiensi bisnis dalam pasar farmasi yang dinamis.</p>
             </div>
-        </section>
+            <div class="bento-item">
+                <h3>Kepatuhan Regulasi</h3>
+                <p>Memastikan setiap proses distribusi memenuhi protokol keamanan kesehatan internasional yang ketat.</p>
+            </div>
+            <div class="bento-item">
+                <h3>Logistik Cepat</h3>
+                <p>Sistem pengiriman yang andal untuk menjamin ketersediaan produk medis tepat waktu.</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="services" class="services">
-            <div class="bento-grid">
-                <div class="bento-card card-lg">
-                    <h3>Distribusi Farmasi Grosir</h3>
-                    <p>Kami memfasilitasi rantai pasok yang aman dan efisien untuk berbagai produk farmasi. Dengan kepatuhan terhadap standar regulasi Inggris, kami menjamin integritas produk dari gudang hingga ke tangan mitra medis.</p>
-                    <img src="https://images.unsplash.com/photo-1586015555751-63bb00f4322a?auto=format&fit=crop&w=500&q=80" style="width:100%; margin-top:2.5rem; border-radius:16px; height:200px; object-fit:cover;" alt="Medicine Supply">
-                </div>
-                <div class="bento-card card-md">
-                    <h3>Konsultasi Manajemen</h3>
-                    <p>Memberikan wawasan mendalam bagi organisasi kesehatan untuk mengoptimalkan operasional, manajemen aset, dan strategi pertumbuhan pasar non-finansial.</p>
-                </div>
-                <div class="bento-card">
-                    <h3>Kepatuhan Regulasi</h3>
-                    <p>Memastikan setiap distribusi memenuhi standar MHRA dan protokol keamanan kesehatan internasional.</p>
-                </div>
-                <div class="bento-card">
-                    <h3>Logistik Global</h3>
-                    <p>Jaringan pengiriman yang andal untuk memastikan ketersediaan obat-obatan tepat waktu.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="cta-content">
-                <h2>Mari Berkolaborasi.</h2>
-                <p>Hubungi tim profesional kami untuk kebutuhan suplai dan konsultasi.</p>
-                <p style="margin-top:2rem;">Email: <a href="mailto:testdevtool@gmail.com" style="color:var(--accent); text-decoration:none; font-weight:700;">testdevtool@gmail.com</a></p>
-            </div>
-            <div class="address-box">
-                <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent);">Kantor Pusat:</p>
-                <p><strong>SHIVAMED PHARMACEUTICALS LTD</strong></p>
-                <p>Laxmi House, 2B Draycott Avenue</p>
-                <p>HARROW, HA3 0BU</p>
-                <p>United Kingdom</p>
-            </div>
-        </section>
-    </div>
+    <section class="contact-box">
+        <div class="contact-text">
+            <h2>Mari Berkolaborasi.</h2>
+            <p>Hubungi tim kami untuk kemitraan distribusi farmasi.</p>
+            <p style="margin-top: 1rem; color: var(--accent);">Email: <a href="mailto:testdevtool@gmail.com" style="color: inherit; text-decoration: none; font-weight: 700;">testdevtool@gmail.com</a></p>
+        </div>
+        <div class="address-card">
+            <p><strong>SHIVAMED PHARMACEUTICALS LTD</strong></p>
+            <p>Laxmi House, 2B Draycott Avenue</p>
+            <p>HARROW, HA3 0BU</p>
+            <p>United Kingdom</p>
+        </div>
+    </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 SHIVAMED PHARMACEUTICALS LTD. Seluruh Hak Cipta Dilindungi.</p>
-            <p style="font-size: 0.75rem; margin-top: 0.5rem;">Registered in England and Wales. Company Number: 13204717</p>
-        </div>
+        <p>&copy; 2026 Shivamed Pharmaceuticals Ltd. Seluruh Hak Cipta Dilindungi.</p>
     </footer>
 
 </body>
